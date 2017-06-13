@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 24, 2014 12:43:37 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.program.model.Student" table="STUDENT">
+		<id name="studentId" type="java.lang.String">
+			<column name="STUDENT_ID" />
+
+		</id>
+		<property name="firstName" type="java.lang.String">
+			<column name="FIRST_NAME" />
+		</property>
+		<property name="lastName" type="java.lang.String">
+			<column name="LAST_NAME" />
+		</property>
+		<property name="dateOfBirth" type="java.util.Date">
+			<column name="DATE_OF_BIRTH" />
+		</property>
+		<property name="gender" type="java.lang.String">
+			<column name="GENDER" />
+		</property>
+		<set name="courses" table="STUDENT_COURSE" inverse="true" cascade="save-update">
+			<key>
+				<column name="STUDENT_ID" />
+			</key>
+			<many-to-many class="com.program.model.Course" column="COURSE_ID" />
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 24, 2014 12:43:37 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.program.model.StudentCourse" table="STUDENT_COURSE">
+		<composite-id>
+			<key-many-to-one name="studentId" class="com.program.model.Student"
+				column="student_id" />
+
+
+			<key-many-to-one name="courseId" class="com.program.model.Course"
+				column="course_id" />
+
+
+		</composite-id>
+	</class>
+</hibernate-mapping>
